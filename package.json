@@ -9,6 +9,10 @@
     "start": "webpack-dev-server --mode development",
     "test": "jest --coverage"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shayu78/ajs-unit-test-1.git"
+  },
   "author": "shayu78",
   "license": "ISC",
   "devDependencies": {
