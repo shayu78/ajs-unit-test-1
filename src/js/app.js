@@ -3,7 +3,7 @@
 export default function getHealthStatus(subjectInfo) {
   if (!(Object.prototype.hasOwnProperty.call(subjectInfo, 'health')
     && Number.isInteger(subjectInfo.health)
-    && subjectInfo.health >= 1)) throw new Error('Неверные входные данные');
+    && subjectInfo.health >= 0)) throw new Error('Неверные входные данные');
   if (subjectInfo.health < 15) return 'critical';
   if (subjectInfo.health > 50) return 'healthy';
   return 'wounded';
@@ -11,7 +11,7 @@ export default function getHealthStatus(subjectInfo) {
 
 try {
   console.log(getHealthStatus({ name: 'Маг', health: 5 }));
-  console.log(getHealthStatus({ name: 'Маг', health: 0 }));
+  console.log(getHealthStatus({ name: 'Маг', health: -10 }));
 } catch (error) {
   console.log(error);
 }
